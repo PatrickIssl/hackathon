@@ -329,10 +329,9 @@
                                             <th>Descrição</th>
                                         </tr>
                                     </tfoot>
-                                    <tbody>
+                                    <tbody id="resultado">
                                         <script>
                                             var produtos = [
-
                                                 {
                                                     "category": "Colheitadeira de Grãos",
                                                     "name": "S430",
@@ -347,19 +346,22 @@
                                                     "description": "As revolucionárias colheitadeiras S430 contam com o sistema de limpeza DF4, com maior área de limpeza e baixo índice de perdas; ajuste automático ao terreno, que controla a velocidade do ventilador e abertura das peneiras de acordo com a inclinação do terreno, mantendo a eficiência do sistema de limpeza, reduzindo ainda mais as perdas e aumentando a qualidade dos grãos.",
                                                     "imageSource": "https://www.deere.com.br/assets/images/region-3/products/harvesters/s-series/s430/colheitadeira_s430_campo1_large_f82720d64f870e9c8e2393614387cd606dcefd4c.jpg"
                                                 },
-
-                                            ]
+                                            ];
 
                                             produtos.forEach(function (ArrayVagal){
-                                                document.body.innerHTML += "<tr>";
+                                                console.log(ArrayVagal.category);
+                                                var html = "<tr>";
                                                 html += "<td>" + ArrayVagal.category + "</td>";
                                                 html += "<td>" + ArrayVagal.name + "</td>";
                                                 html += "<td>" + ArrayVagal.features + "</td>";
                                                 html += "<td>" + ArrayVagal.description + "</td>";
                                                 html += "</tr>";
-                                          
+                                                document.getElementById("resultado").innerHTML += html;
+
                                             });
+                                            
                                         </script>
+                                        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
                                     </tbody>
                                 </table>
                             </div>
