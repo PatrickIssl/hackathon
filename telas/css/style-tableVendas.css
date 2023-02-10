@@ -1,0 +1,8 @@
+
+.criar > a {
+    color: #efefef;
+}
+
+.criar > a:hover {
+    color: #656565;
+}
