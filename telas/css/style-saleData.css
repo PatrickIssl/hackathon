@@ -41,3 +41,11 @@
 .textoInf {
     display: inline-block;
 }
+
+.dis {
+    border: solid 3px #b8b8b8;
+    background-color: #b8b8b8;
+    border-radius: 2px;
+    color: #656565;
+}
+

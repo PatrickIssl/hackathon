@@ -87,24 +87,31 @@
                                     </tfoot>
                                     <tbody id="resultado">
                                         <script>
+                                            var resultados  = [{"name":""}]
                                             var urlConsulta ="http://165.22.84.237:3000/api/v1/city?searchField=state&searchValue=PR"
                                             const Http = new XMLHttpRequest();
-                                            Http.open("GET", url);
+                                            Http.open('GET', urlConsulta);
                                             Http.send();
-
-                                            Http.onreadystatechange = (e) => {
-                                                   var produtos = Http.responseText
-                                            console.log(Http.responseText)
-                                            }
-
-                                            produtos.forEach(function (ArrayVagal) {
+                                            Http.onreadystatechange = function(){
+                                                if(this.status == 200 && this.readyState == 4){
+                                                    resultados = JSON.parse(Http.response);
+                                                    console.log(resultados);
+                                                    resultados.forEach(function (ArrayVagal) {
                                                 var html = "<tr>";
-                                                html += "<td > <a style='text-decoration:none; color:black' href='cityData.html'>" + ArrayVagal.city + "</a></td>";
+                                                html += "<td > <a style='text-decoration:none; color:black' href='cityData.html'>" + ArrayVagal.name + "</a></td>";
                                                 html += "</tr>";
                                                 document.getElementById("resultado").innerHTML += html;
 
-                                            });
+                                                });
+                                                }
+                                            }
+                                            resultados.forEach(function (ArrayVagal) {
+                                                var html = "<tr>";
+                                                html += "<td > <a style='text-decoration:none; color:black' href='cityData.html'>" + ArrayVagal.name + "</a></td>";
+                                                html += "</tr>";
+                                                document.getElementById("resultado").innerHTML += html;
 
+                                                });
                                         </script>
                                         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
                                             type="text/javascript"></script>
