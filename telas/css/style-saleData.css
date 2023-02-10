@@ -31,7 +31,11 @@
 }
 
 .editar > a {
-    color: #45454a;
+    color: #efefef;
+}
+
+.editar > a:hover {
+    color: #656565;
 }
 
 .textoInf {
