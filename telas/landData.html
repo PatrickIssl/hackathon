@@ -140,24 +140,26 @@
                                                     {
                                                         "data":"01/04/2022",
                                                         "car": "PR-4105904-35A9F63A10B94013B31868089B627FCF",
-                                                        "vendedor": 'Lucas Skywaker', "sucesso": 'Sim',
+                                                        "vendedor": 'Lucas Skywaker', "valor": '27987.98',
                                                     },
                                                     {
                                                         "data":"31/10/2022",
                                                         "car": "PR-4105904-35A9F63A16M6435J75RE36335K465HYJ",
-                                                        "vendedor": 'Dark Valdir', "sucesso": 'Não',
+                                                        "vendedor": 'Dark Valdir', "valor": '0',
                                                     }
     
                                                 ];
     
                                                 vendas.forEach(function (ArrayVagal) {
-                                                    var html = "  <tr>";
-                                                    html += "<td>" + ArrayVagal.data + "</td>";
-                                                    html += "<td>" + ArrayVagal.car +  "</td>";
-                                                    html += "<td>" + ArrayVagal.vendedor +  "</td>";
-                                                    html += "<td>" + ArrayVagal.sucesso +  "</td>";
-                                                    html += "</tr>";
-                                                    document.getElementById("resultado").innerHTML += html;
+                                                    if(ArrayVagal.valor > 0) {
+                                                        var html = "  <tr>";
+                                                        html += "<td>" + ArrayVagal.data + "</td>";
+                                                        html += "<td>" + ArrayVagal.car +  "</td>";
+                                                        html += "<td>" + ArrayVagal.vendedor +  "</td>";
+                                                        html += "<td>" + ArrayVagal.valor +  "</td>";
+                                                        html += "</tr>";
+                                                        document.getElementById("resultado").innerHTML += html;
+                                                    }
     
                                                 });
     
