@@ -87,19 +87,15 @@
                                     </tfoot>
                                     <tbody id="resultado">
                                         <script>
-                                            var produtos = [
-                                                {
-                                                    "car": "PR-4105904-35A9F63A10B94013B31868089B627FCF",
-                                                    "latitude": 37.2431, "longitude": -115.7930, "size": 13.191,
-                                                    "city": "Cascavel",
-                                                    "landowner": {
-                                                        "customer": { "login": "foo.bar" },
-                                                        "lands": ["PR-4105904-35A9F63A10B94013B31868089B627FCF",
-                                                            "PR-4127809-C846B89322594A24967A01CDEB393BDF"]
-                                                    }
-                                                }
+                                            var urlConsulta ="http://165.22.84.237:3000/api/v1/city?searchField=state&searchValue=PR"
+                                            const Http = new XMLHttpRequest();
+                                            Http.open("GET", url);
+                                            Http.send();
 
-                                            ];
+                                            Http.onreadystatechange = (e) => {
+                                                   var produtos = Http.responseText
+                                            console.log(Http.responseText)
+                                            }
 
                                             produtos.forEach(function (ArrayVagal) {
                                                 var html = "<tr>";
