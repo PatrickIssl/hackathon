@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Listagem Cidades</title>
+    <title>Listagem clientes</title>
 
     <!-- Custom fonts for this template -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -257,9 +257,10 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Cidades</h1>
-                    <p class="mb-4">Listagem de cidades.</p>
-
+                    <p class="mb-4">Propriedades</p>
+"lands": ["
+PR-4105904-35A9F63A10B94013B31868089B627FCF", "PR-4127809-C846B89322594A24967A01CDEB393BDF
+"] 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-body">
@@ -267,12 +268,14 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Nome</th>
+                                            <th>Latitude</th>
+                                            <th>Codigo CAR</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Nome</th>
+                                            <th>Codigo CAR</th>
                                         </tr>
                                     </tfoot>
                                     <tbody id="resultado">
@@ -281,7 +284,6 @@
                                                 {
                                                     "car": "PR-4105904-35A9F63A10B94013B31868089B627FCF",
                                                     "latitude": 37.2431, "longitude": -115.7930, "size": 13.191,
-                                                    "city": "Cascavel",
                                                     "landowner": {
                                                         "customer": { "login": "foo.bar" },
                                                         "lands": ["PR-4105904-35A9F63A10B94013B31868089B627FCF",
@@ -293,7 +295,8 @@
 
                                             produtos.forEach(function (ArrayVagal) {
                                                 var html = "<tr>";
-                                                html += "<td>" + ArrayVagal.city + "</td>";
+                                                html += "<td>" + ArrayVagal.landowner.customer.login + "</td>";
+                                                html += "<td>" + ArrayVagal.car + "</td>";
                                                 html += "</tr>";
                                                 document.getElementById("resultado").innerHTML += html;
 
